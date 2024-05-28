@@ -14,6 +14,8 @@ const scene = new THREE.Scene();
 const geometry = new THREE.BoxGeometry(1, 1, 1);
 const diamondTexture = textureLoader.load("/textures/minecraft.png");
 diamondTexture.colorSpace = THREE.SRGBColorSpace;
+diamondTexture.magFilter = THREE.NearestFilter;
+diamondTexture.generateMipmaps = false;
 
 const material = new THREE.MeshBasicMaterial({ map: diamondTexture });
 const mesh = new THREE.Mesh(geometry, material);
